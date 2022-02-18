@@ -7,7 +7,7 @@ public class Solution {
         System.out.println(id);
 
         //2. 소문자, -, _, .을 제외한 문자 제거
-        id = id.replaceAll("[^a-z|-|_|.]", "");
+        id = id.replaceAll("[^a-z|0-9|-|_|.]", "");
         System.out.println(id);
 
         //3. 마침표가 2번 이상 연속된 부분 하나의 마침표로 치환
@@ -15,7 +15,7 @@ public class Solution {
         System.out.println(id);
 
         //4. 마침표가 처음이나 끝에 위치한다면 제거
-        if (id.length()>0 || id.charAt(0) == '.') {
+        if (id.length()>0 && id.charAt(0) == '.') {
             if (id.length() <= 1) {
                 id = "";
             } else {
@@ -23,7 +23,7 @@ public class Solution {
             }
         }
         System.out.println(id);
-        if (id.length()>0 ||id.charAt(id.length() - 1) == '.') {
+        if (id.length()>0 && id.charAt(id.length() - 1) == '.') {
             if (id.length() <= 1) {
                 id = "";
             } else {
@@ -61,7 +61,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        String id = "=.=";
+        String id = "abcdefghijklmn.p";
         id = sol.solution(id);
 
         System.out.println("result : " + id);
