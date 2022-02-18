@@ -6,8 +6,8 @@ public class Solution {
         String id = new_id.toLowerCase();
         System.out.println(id);
 
-        //2. 소문자, -, _, .을 제외한 문자 제거
-        id = id.replaceAll("[^a-z|0-9|-|_|.]", "");
+        //2. 소문자, 숫자, -, _, .을 제외한 문자 제거
+        id = id.replaceAll("[^-|a-z|0-9|_|.]", "");
         System.out.println(id);
 
         //3. 마침표가 2번 이상 연속된 부분 하나의 마침표로 치환
@@ -61,7 +61,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        String id = "abcdefghijklmn.p";
+        String id = "z-+.^.";
         id = sol.solution(id);
 
         System.out.println("result : " + id);
